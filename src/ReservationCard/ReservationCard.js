@@ -8,7 +8,7 @@ const ReservationCard = (props) => {
         <p className="card-details">{ props.date }</p>
         <p className="card-details">{ props.time }</p>
         <p className="card-details">Number of guests: { props.number }</p>
-        <button className="cancel-button">Cancel</button>
+        <button data-testid={`cancel-${props.id}`}className="cancel-button">Cancel</button>
       </section>
     )
 }

@@ -42,6 +42,7 @@ class CafeForm extends Component {
       <form data-testid='cafe-form' onSubmit={this.handleSubmit}>
         <label htlmfor='name'></label>
         <input 
+          className="input-style"
           type='text'
           name='name' 
           placeholder='Name' 
@@ -51,6 +52,7 @@ class CafeForm extends Component {
 
         <label htlmfor='date'></label>
         <input 
+          className="input-style"
           type='text'
           name='date' 
           placeholder='Date (mm/dd)' 
@@ -60,6 +62,7 @@ class CafeForm extends Component {
 
         <label htlmfor='time'></label>
         <input 
+          className="input-style"
           type='text'
           name='time' 
           placeholder='Time' 
@@ -69,6 +72,7 @@ class CafeForm extends Component {
 
         <label htlmfor='number'></label>
         <input 
+          className="input-style"
           type='text'
           name='number' 
           placeholder='Number of guests' 

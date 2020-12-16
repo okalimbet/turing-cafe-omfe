@@ -1,6 +1,7 @@
 .reservations-container {
   display: flex;
+  justify-content: space-between;
   width: auto;
   flex-wrap: wrap;
-  margin: auto;
+  margin: 3em auto;
 }

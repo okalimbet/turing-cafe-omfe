@@ -3,7 +3,7 @@
   width: 250px;
   background-color: white;
   color: teal;
-  border: 0.2em solid teal;
+  border: 0.4em solid teal;
   border-radius: 0.6em;
   padding: 0em;
   font-size: 0.9em;
@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0.5em;
+  margin: 0.5em 0.5em;
 }
 
 .card-details{

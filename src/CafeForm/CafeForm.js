@@ -8,7 +8,7 @@ class CafeForm extends Component {
       name: '',
       date: '',
       time: '',
-      numberOfGuests: ''
+      number: ''
     }
   }
   handleChange = (event) => {
@@ -21,7 +21,7 @@ class CafeForm extends Component {
       name: this.state.name,
       date: this.state.date,
       time: this.state.time,
-      numberOfGuests: this.state.numberOfGuests,
+      number: this.state.number,
       id: Date.now()
     }
     this.props.makeReservation( newReservation )
@@ -33,13 +33,13 @@ class CafeForm extends Component {
       name: '', 
       date: '',
       time: '',
-      numberOfGuests: ''
+      number: ''
     })
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form data-testid='cafe-form' onSubmit={this.handleSubmit}>
         <label htlmfor='name'></label>
         <input 
           type='text'
@@ -67,12 +67,12 @@ class CafeForm extends Component {
           onChange={ this.handleChange }
         />
 
-        <label htlmfor='numberOfGuests'></label>
+        <label htlmfor='number'></label>
         <input 
           type='text'
-          name='numberOfGuests' 
+          name='number' 
           placeholder='Number of guests' 
-          value={ this.state.numberOfGuests } 
+          value={ this.state.number } 
           onChange={ this.handleChange }
         />
 

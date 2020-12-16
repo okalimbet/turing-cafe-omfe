@@ -13,7 +13,7 @@ describe('CafeForm', () => {
     expect(screen.getByPlaceholderText('Date (mm/dd)')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Time')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Number of guests')).toBeInTheDocument();
-    expect(screen.getByText('Make Reservation'))
+    expect(screen.getByText('Make Reservation')).toBeInTheDocument();
   })
 
   it('CafeForm track input changes and a a new reservation', () => {
@@ -25,7 +25,7 @@ describe('CafeForm', () => {
     const nameInput = screen.getByPlaceholderText('Name');
     const dateInput = screen.getByPlaceholderText('Date (mm/dd)');
     const timeInput = screen.getByPlaceholderText('Time');
-    const numberOfGuestsInput = screen.getByPlaceholderText('Number of guests');
+    const numberInput = screen.getByPlaceholderText('Number of guests');
     const makeReservationButton = screen.getByText('Make Reservation');
 
     Date.now = jest.fn().mockImplementation(() => 1000)
@@ -33,7 +33,7 @@ describe('CafeForm', () => {
     fireEvent.change(nameInput, { target: {value: 'Olga'} });
     fireEvent.change(dateInput, { target: {value: '10/17'} });
     fireEvent.change(timeInput, { target: {value: '12:00'} });
-    fireEvent.change(numberOfGuestsInput, { target: {value: '100'} });
+    fireEvent.change(numberInput, { target: {value: '100'} });
     fireEvent.click(makeReservationButton);
 
     const expectedReservation = {
@@ -41,7 +41,7 @@ describe('CafeForm', () => {
       name: 'Olga',
       date: '10/17',
       time: '12:00',
-      numberOfGuests: '100'
+      number: '100'
     }
 
     expect(mockMakeReservation).toHaveBeenCalledWith(expectedReservation);

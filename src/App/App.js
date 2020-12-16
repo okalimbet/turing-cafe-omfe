@@ -16,11 +16,11 @@ class App extends Component {
 
   componentDidMount() {
     getAllReservations()
-    .then(reservations => this.setState({ reservations }))
+    .then(reservations => this.setState({ reservations: reservations }))
     .catch(error => this.setState({error: error.message}))
   }
 
-  makeReservation(reservation) {
+  makeReservation = (reservation) => {
     this.setState({ reservations: [...this.state.reservations, reservation] })
   }
 

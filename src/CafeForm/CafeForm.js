@@ -15,11 +15,34 @@ class CafeForm extends Component {
     this.setState({[event.target.name]: event.target.value})
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const newReservation = { 
+      name: this.state.name,
+      date: this.state.date,
+      time: this.state.time,
+      numberOfGuests: this.state.numberOfGuests,
+      id: Date.now()
+    }
+    this.props.makeReservation( newReservation )
+    this.clearInputs()
+  }
+
+  clearInputs = () => {
+    this.setState({
+      name: '', 
+      date: '',
+      time: '',
+      numberOfGuests: ''
+    })
+  }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <label htlmfor='name'></label>
         <input 
+          type='text'
           name='name' 
           placeholder='Name' 
           value={ this.state.name } 
@@ -28,6 +51,7 @@ class CafeForm extends Component {
 
         <label htlmfor='date'></label>
         <input 
+          type='text'
           name='date' 
           placeholder='Date (mm/dd)' 
           value={ this.state.date } 
@@ -36,6 +60,7 @@ class CafeForm extends Component {
 
         <label htlmfor='time'></label>
         <input 
+          type='text'
           name='time' 
           placeholder='Time' 
           value={ this.state.time } 
@@ -44,13 +69,14 @@ class CafeForm extends Component {
 
         <label htlmfor='numberOfGuests'></label>
         <input 
+          type='text'
           name='numberOfGuests' 
           placeholder='Number of guests' 
           value={ this.state.numberOfGuests } 
           onChange={ this.handleChange }
         />
 
-        <button>Make Reservation</button>
+        <button className="cancel-button">Make Reservation</button>
       </form>
 
     )

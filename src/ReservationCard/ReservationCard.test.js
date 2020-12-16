@@ -15,7 +15,7 @@ describe('ReservationCard', () => {
           key={'0000'}
         />
     );
-
+  
     expect(screen.getByText('Carl')).toBeInTheDocument();
     expect(screen.getByText('4/6')).toBeInTheDocument();
     expect(screen.getByText('8:00')).toBeInTheDocument();

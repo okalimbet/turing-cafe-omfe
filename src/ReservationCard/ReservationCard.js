@@ -3,7 +3,7 @@ import './ReservationCard.css'
 
 const ReservationCard = (props) => {
     return (
-      <section className='reservationCard'>
+      <section data-testid= {`reservationcard-${props.id}`}className='reservationCard'>
         <h3 className="card-name">{ props.name }</h3>
         <p className="card-details">{ props.date }</p>
         <p className="card-details">{ props.time }</p>

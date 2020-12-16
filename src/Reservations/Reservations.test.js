@@ -25,11 +25,8 @@ describe('Reservations', () => {
     render(
         <Reservations reservations={ reservationSampleData }/>
     );
-
-    expect(screen.getByText('Christie')).toBeInTheDocument();
-    expect(screen.getByText('12/29')).toBeInTheDocument();
-    expect(screen.getByText('8:00')).toBeInTheDocument();
-    expect(screen.getByText('Number of guests: 12')).toBeInTheDocument();
-    expect(screen.getByTestId('cancel-1')).toBeInTheDocument();
+    
+    expect(screen.getByTestId('reservationcard-1')).toBeInTheDocument();
+    expect(screen.getByTestId('reservationcard-2')).toBeInTheDocument();
   })
 })

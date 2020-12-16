@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+import { getAllReservations } from '../apiCalls'
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      reservations: [], 
+      error: ''
+    }
+  }
+
+  componentDidMount() {
+    getAllReservations()
+    .then(reservations => this.setState({ reservations }))
+    .catch(error => this.setState({error: error.message}))
+  }
+
   render() {
     return (
       <div className="App">
